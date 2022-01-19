@@ -1,4 +1,4 @@
-package openesa
+package esaop
 
 import (
 	"fmt"

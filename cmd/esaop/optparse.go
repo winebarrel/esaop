@@ -10,16 +10,16 @@ import (
 	"path/filepath"
 
 	"github.com/pelletier/go-toml"
-	"github.com/winebarrel/openesa"
+	"github.com/winebarrel/esaop"
 )
 
 var version string
 
 const (
-	DefaultConfig = "openesa.toml"
+	DefaultConfig = "esaop.toml"
 )
 
-func parseArgs() *openesa.Config {
+func parseArgs() *esaop.Config {
 	var config string
 	flag.StringVar(&config, "config", "", "config file")
 	ver := flag.Bool("version", false, "print version")
@@ -42,14 +42,14 @@ func parseArgs() *openesa.Config {
 	return loadConfig(config)
 }
 
-func loadConfig(path string) *openesa.Config {
+func loadConfig(path string) *esaop.Config {
 	rawCfg, err := ioutil.ReadFile(path)
 
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	cfg := &openesa.Config{}
+	cfg := &esaop.Config{}
 	err = toml.Unmarshal(rawCfg, cfg)
 
 	if err != nil {

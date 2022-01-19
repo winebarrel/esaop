@@ -1,4 +1,4 @@
-package openesa
+package esaop
 
 import (
 	"context"
@@ -14,14 +14,14 @@ import (
 	"github.com/gorilla/sessions"
 	"github.com/markbates/goth"
 	"github.com/markbates/goth/gothic"
+	"github.com/winebarrel/esaop/esa"
 	goth_esa "github.com/winebarrel/goth-esa/esa"
-	"github.com/winebarrel/openesa/esa"
 )
 
 type ContextKey string
 
 const (
-	sessionName               = "_openesa_session"
+	sessionName               = "_esaop_session"
 	sessionUserKey            = "user"
 	contextUserKey ContextKey = "user"
 )

@@ -1,0 +1,11 @@
+addr = "${ESAOP_ADDR}"
+port = ${ESAOP_PORT}
+team = "${ESAOP_TAEM}"
+per_page = ${ESAOP_PER_PAGE}
+session_secret = "${ESAOP_SESSION_SECRET}"
+cookie_secure = ${ESAOP_COOKIE_SECURE}
+
+[oauth2]
+client_id = "${ESAOP_OAUTH2_CLIENT_ID}"
+client_secret = "${ESAOP_OAUTH2_CLIENT_SECRET}"
+redirect_host = "${ESAOP_OAUTH2_REDIRECT_HOST}"

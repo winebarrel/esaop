@@ -1,4 +1,4 @@
-module github.com/winebarrel/openesa
+module github.com/winebarrel/esaop
 
 go 1.17
 

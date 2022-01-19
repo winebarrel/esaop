@@ -1,11 +1,11 @@
-DOCKER_REPO := public.ecr.aws/winebarrel/openesa
+DOCKER_REPO := public.ecr.aws/winebarrel/esaop
 
 .PHONY: all
 all: vet build
 
 .PHONY: build
 build:
-	go build ./cmd/openesa
+	go build ./cmd/esaop
 
 .PHONY: vet
 vet:
@@ -13,7 +13,7 @@ vet:
 
 .PHONY: clean
 clean:
-	rm -rf openesa openesa.exe
+	rm -rf esaop esaop.exe
 
 .PHONY: image
 image:

@@ -5,12 +5,12 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/winebarrel/openesa"
+	"github.com/winebarrel/esaop"
 )
 
 func main() {
 	cfg := parseArgs()
-	r := openesa.NewRouter(cfg)
+	r := esaop.NewRouter(cfg)
 	addr := fmt.Sprintf("%s:%d", cfg.Addr, cfg.Port)
 	err := http.ListenAndServe(addr, r)
 

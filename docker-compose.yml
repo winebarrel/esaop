@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  openesa:
+  esaop:
     build: .
     env_file:
       - docker.env

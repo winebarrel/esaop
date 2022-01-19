@@ -6,8 +6,8 @@ RUN apt-get update && \
   ca-certificates \
   curl
 
-ARG OPENESA_VERSION=0.1.2
-RUN curl -sSfL https://github.com/winebarrel/openesa/releases/download/v${OPENESA_VERSION}/openesa_${OPENESA_VERSION}_linux_amd64.tar.gz \
+ARG ESAOP_VERSION=0.1.2
+RUN curl -sSfL https://github.com/winebarrel/esaop/releases/download/v${ESAOP_VERSION}/esaop_${ESAOP_VERSION}_linux_amd64.tar.gz \
   | tar zxf -
 
 COPY dockerfiles /

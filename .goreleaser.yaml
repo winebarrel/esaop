@@ -2,7 +2,7 @@ before:
   hooks:
     - go mod tidy
 builds:
-  - main: ./cmd/openesa
+  - main: ./cmd/esaop
     ldflags:
       - -X main.version={{.Version}}
     env:
@@ -16,4 +16,4 @@ checksum:
 archives:
   - files:
       - README.md
-      - openesa.toml.sample
+      - esaop.toml.sample
