@@ -6,7 +6,7 @@ RUN apt-get update && \
   ca-certificates \
   curl
 
-ARG ESAOP_VERSION=0.1.2
+ARG ESAOP_VERSION=0.1.3
 RUN curl -sSfL https://github.com/winebarrel/esaop/releases/download/v${ESAOP_VERSION}/esaop_${ESAOP_VERSION}_linux_amd64.tar.gz \
   | tar zxf -
 
