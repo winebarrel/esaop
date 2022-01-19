@@ -7,7 +7,7 @@ A web application that redirects human-readable URLs to [esa.io](https://esa.io/
 1. Register aplication. see the [documentation](https://docs.esa.io/posts/102#%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E7%99%BB%E9%8C%B2)
 2. Write `open-esa.toml`
     ```sh
-    cp open-esa.toml.esample open-esa.toml
+    cp open-esa.toml.sample open-esa.toml
     vi open-esa.toml
     ```
 3. Run `open-esa`

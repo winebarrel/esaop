@@ -17,4 +17,4 @@ checksum:
 archives:
   - files:
       - README.md
-      - open-esa.toml.esample
+      - open-esa.toml.sample
