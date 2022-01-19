@@ -13,3 +13,7 @@ builds:
       - darwin
 checksum:
   name_template: "checksums.txt"
+archives:
+  - files:
+      - README.md
+      - open-esa.toml.esample
