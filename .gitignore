@@ -1,5 +1,5 @@
-/open-esa
-/open-esa.exe
+/openesa
+/openesa.exe
 *.env
 *.toml
 dist/

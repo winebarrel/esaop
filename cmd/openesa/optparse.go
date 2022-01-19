@@ -16,7 +16,7 @@ import (
 var version string
 
 const (
-	DefaultConfig = "open-esa.toml"
+	DefaultConfig = "openesa.toml"
 )
 
 func parseArgs() *openesa.Config {

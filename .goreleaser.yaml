@@ -2,8 +2,7 @@ before:
   hooks:
     - go mod tidy
 builds:
-  - id: open-esa
-    main: ./cmd/open-esa
+  - main: ./cmd/openesa
     ldflags:
       - -X main.version={{.Version}}
     env:
@@ -17,4 +16,4 @@ checksum:
 archives:
   - files:
       - README.md
-      - open-esa.toml.sample
+      - openesa.toml.sample

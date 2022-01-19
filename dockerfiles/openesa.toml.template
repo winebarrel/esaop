@@ -1,0 +1,11 @@
+addr = "${OPENESA_ADDR}"
+port = ${OPENESA_PORT}
+team = "${OPENESA_TAEM}"
+per_page = ${OPENESA_PER_PAGE}
+session_secret = "${OPENESA_SESSION_SECRET}"
+cookie_secure = ${OPENESA_COOKIE_SECURE}
+
+[oauth2]
+client_id = "${OPENESA_OAUTH2_CLIENT_ID}"
+client_secret = "${OPENESA_OAUTH2_CLIENT_SECRET}"
+redirect_host = "${OPENESA_OAUTH2_REDIRECT_HOST}"
