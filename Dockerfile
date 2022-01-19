@@ -6,7 +6,7 @@ RUN apt-get update && \
   ca-certificates \
   curl
 
-ARG OPEN_ESA_VERSION=0.1.0
+ARG OPEN_ESA_VERSION=0.1.1
 RUN curl -sSfL https://github.com/winebarrel/openesa/releases/download/v${OPEN_ESA_VERSION}/openesa_${OPEN_ESA_VERSION}_linux_amd64.tar.gz \
   | tar zxf -
 
