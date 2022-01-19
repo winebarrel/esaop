@@ -13,4 +13,4 @@ envsubst '
   $OPEN_ESA_OAUTH2_REDIRECT_HOST
 ' < /open-esa.toml.template > /open-esa.toml
 
-exec /openesa
+exec /open-esa
