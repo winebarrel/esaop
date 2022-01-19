@@ -1,0 +1,16 @@
+#!/bin/bash
+set -e
+
+envsubst '
+  $OPEN_ESA_ADDR
+  $OPEN_ESA_PORT
+  $OPEN_ESA_TAEM
+  $OPEN_ESA_PER_PAGE
+  $OPEN_ESA_SESSION_SECRET
+  $OPEN_ESA_COOKIE_SECURE
+  $OPEN_ESA_OAUTH2_CLIENT_ID
+  $OPEN_ESA_OAUTH2_CLIENT_SECRET
+  $OPEN_ESA_OAUTH2_REDIRECT_HOST
+' < /open-esa.toml.template > /open-esa.toml
+
+exec /openesa

@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  open-esa:
+    build: .
+    env_file:
+      - docker.env
+    ports:
+      - 8080:8080
