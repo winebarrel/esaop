@@ -1,3 +1,4 @@
 /open-esa
 /open-esa.exe
 *.toml
+dist/
