@@ -17,8 +17,8 @@ A web application that redirects human-readable URLs to [esa.io](https://esa.io/
 
 * `http://your-esaop.example.com/foo/bar/zoo`
     * Post exists:
-    * `https://[team].esa.io/posts/[post num]`
+    * -> `https://[team].esa.io/posts/[post num]`
     * Post does not exist:
-    * `https://[team].esa.io/posts/posts/new?category_path=%2Ffoo%2Fbar%2Fzoo`
+    * -> `https://[team].esa.io/posts/posts/new?category_path=%2Ffoo%2Fbar%2Fzoo`
 * `http://your-esaop.example.com/foo/`
-    * `https://[team].esa.io/#path=%2Ffoo`
+    * -> `https://[team].esa.io/#path=%2Ffoo`
