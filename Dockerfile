@@ -6,7 +6,7 @@ RUN apt-get update && \
   ca-certificates \
   curl
 
-ARG OPENESA_VERSION=0.1.1
+ARG OPENESA_VERSION=0.1.2
 RUN curl -sSfL https://github.com/winebarrel/openesa/releases/download/v${OPENESA_VERSION}/openesa_${OPENESA_VERSION}_linux_amd64.tar.gz \
   | tar zxf -
 
