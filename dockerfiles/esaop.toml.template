@@ -1,7 +1,6 @@
 addr = "${ESAOP_ADDR}"
 port = ${ESAOP_PORT}
 team = "${ESAOP_TAEM}"
-per_page = ${ESAOP_PER_PAGE}
 session_secret = "${ESAOP_SESSION_SECRET}"
 cookie_secure = ${ESAOP_COOKIE_SECURE}
 
