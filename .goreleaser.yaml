@@ -2,7 +2,8 @@ before:
   hooks:
     - go mod tidy
 builds:
-  - main: ./cmd/open-esa
+  - id: open-esa
+    main: ./cmd/open-esa
     ldflags:
       - -X main.version={{.Version}}
     env:
