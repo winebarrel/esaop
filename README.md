@@ -5,7 +5,8 @@ A web application that redirects human-readable URLs to [esa.io](https://esa.io/
 ## Getting Started
 
 1. Register aplication. see the [documentation](https://docs.esa.io/posts/102#%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E7%99%BB%E9%8C%B2)
-2. Write `esaop.toml`
+    * Redirect URL: `http://localhost:8080/auth/callback`
+3. Write `esaop.toml`
     ```sh
     cp esaop.toml.sample esaop.toml
     vi esaop.toml
