@@ -8,10 +8,12 @@ import (
 	"os"
 	"path"
 	"strings"
+	"time"
 
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 	"github.com/gorilla/sessions"
+	"github.com/itchyny/timefmt-go"
 	"github.com/markbates/goth"
 	"github.com/markbates/goth/gothic"
 	"github.com/winebarrel/esaop/esa"
@@ -59,7 +61,9 @@ func NewRouter(cfg *Config) http.Handler {
 	router.PathPrefix("/").Methods("GET").HandlerFunc(func(rw http.ResponseWriter, r *http.Request) {
 		user := getUser(r)
 		token := user.AccessToken
-		cat, name := splitPath(strings.TrimPrefix(r.URL.Path, "/"))
+		reqPath := strings.TrimPrefix(r.URL.Path, "/")
+		reqPath = timefmt.Format(time.Now(), reqPath)
+		cat, name := splitPath(reqPath)
 
 		if name == "" {
 			var loc string
