@@ -3,10 +3,12 @@ package esaop
 import (
 	"context"
 	"fmt"
+	"log"
 	"net/http"
 	"net/url"
 	"os"
 	"path"
+	"regexp"
 	"strings"
 	"time"
 
@@ -16,6 +18,8 @@ import (
 	"github.com/itchyny/timefmt-go"
 	"github.com/markbates/goth"
 	"github.com/markbates/goth/gothic"
+	dfe "github.com/newm4n/go-dfe"
+	"github.com/robfig/cron/v3"
 	"github.com/winebarrel/esaop/esa"
 	goth_esa "github.com/winebarrel/goth-esa/esa"
 )
@@ -40,6 +44,8 @@ func NewRouter(cfg *Config) http.Handler {
 	store := newCookieStore(cfg.SessionSecret, cfg.CookieSecure)
 	router := mux.NewRouter()
 	router.Use(authorizeMiddleware(store))
+	reph := regexp.MustCompile(`\${([^}]+)}`)
+	dfetr := dfe.NewPatternTranslation()
 
 	router.Path("/auth/callback").Methods("GET").HandlerFunc(func(rw http.ResponseWriter, r *http.Request) {
 		user, err := gothic.CompleteUserAuth(rw, r)
@@ -62,7 +68,34 @@ func NewRouter(cfg *Config) http.Handler {
 		user := getUser(r)
 		token := user.AccessToken
 		reqPath := strings.TrimPrefix(r.URL.Path, "/")
-		reqPath = timefmt.Format(time.Now(), reqPath)
+
+		reqPath = reph.ReplaceAllStringFunc(reqPath, func(s string) string {
+			ph := strings.TrimSuffix(strings.TrimPrefix(s, "${"), "}")
+			var dtFmt string
+			var tm time.Time
+
+			if strings.Contains(ph, "|") {
+				cronDate := strings.SplitN(ph, "|", 2)
+				cronExp := strings.TrimSpace(cronDate[0])
+				cronExp = strings.ReplaceAll(cronExp, ",", " ")
+				dtFmt = strings.TrimSpace(cronDate[1])
+				skd, err := cron.ParseStandard(cronExp)
+
+				if err != nil {
+					log.Printf("failed to parse cron expression: %s", err)
+					return s
+				}
+
+				tm = skd.Next(time.Now())
+			} else {
+				dtFmt = strings.TrimSpace(ph)
+				tm = time.Now()
+			}
+
+			return tm.Format(dfetr.JavaToGoFormat(dtFmt))
+		})
+
+		reqPath = timefmt.Format(time.Now(), reqPath) // DEPRECATED:
 		cat, name := splitPath(reqPath)
 
 		if name == "" {

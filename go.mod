@@ -8,7 +8,9 @@ require (
 	github.com/gorilla/sessions v1.2.1
 	github.com/itchyny/timefmt-go v0.1.3
 	github.com/markbates/goth v1.68.0
+	github.com/newm4n/go-dfe v0.0.0-20210113055126-9d5f01722db9
 	github.com/pelletier/go-toml v1.9.4
+	github.com/robfig/cron/v3 v3.0.0
 	github.com/winebarrel/goth-esa v0.0.0-20211121190344-bb476681de22
 )
 

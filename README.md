@@ -14,6 +14,17 @@ A web application that redirects human-readable URLs to [esa.io](https://esa.io/
 3. Run `esaop`
 4. Open http://localhost:8080/foo/bar/zoo
 
+### Use Date/CRON expression
+
+Access date: `2022/03/21`
+
+* http://localhost:8080/${yyyy/MM/dd}
+  * -> Path: `2022/03/21`
+* http://localhost:8080/${*,*m*,*,5|yyyy/MM/dd}
+  * -> `Path: 2022/03/25`
+* http://localhost:8080/${*,*,10,*,*|yyyy/MM/dd}
+  * -> `Path: 2022/04/10`
+
 ## Redirect Rules
 
 * `http://your-esaop.example.com/foo/bar/zoo`
