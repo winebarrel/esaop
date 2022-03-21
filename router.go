@@ -82,7 +82,7 @@ func NewRouter(cfg *Config) http.Handler {
 				skd, err := cron.ParseStandard(cronExp)
 
 				if err != nil {
-					log.Printf("failed to parse cron expression: %s", err)
+					log.Printf("failed to parse cron expression: %s: %s", err, cronExp)
 					return s
 				}
 
