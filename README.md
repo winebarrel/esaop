@@ -14,6 +14,16 @@ A web application that redirects human-readable URLs to [esa.io](https://esa.io/
 3. Run `esaop`
 4. Open http://localhost:8080/foo/bar/zoo
 
+## Redirect Rules
+
+* `http://your-esaop.example.com/foo/bar/zoo`
+    * Post exists:
+    * -> `https://[team].esa.io/posts/[post num]`
+    * Post does not exist:
+    * -> `https://[team].esa.io/posts/posts/new?category_path=%2Ffoo%2Fbar%2Fzoo`
+* `http://your-esaop.example.com/foo/`
+    * -> `https://[team].esa.io/#path=%2Ffoo`
+
 ### Use Date/CRON expression
 
 Access date: `2022/03/21`
@@ -24,13 +34,3 @@ Access date: `2022/03/21`
   * -> `Path: 2022/03/25`
 * http://localhost:8080/${*,*,10,*,*|yyyy/MM/dd}
   * -> `Path: 2022/04/10`
-
-## Redirect Rules
-
-* `http://your-esaop.example.com/foo/bar/zoo`
-    * Post exists:
-    * -> `https://[team].esa.io/posts/[post num]`
-    * Post does not exist:
-    * -> `https://[team].esa.io/posts/posts/new?category_path=%2Ffoo%2Fbar%2Fzoo`
-* `http://your-esaop.example.com/foo/`
-    * -> `https://[team].esa.io/#path=%2Ffoo`
