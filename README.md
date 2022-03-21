@@ -28,9 +28,9 @@ A web application that redirects human-readable URLs to [esa.io](https://esa.io/
 
 Access date: `2022/03/21`
 
-* `http://[team].esa.io/Diary/${yyyy/MM/dd}`
+* `http://your-esaop.example.com/Diary/${yyyy/MM/dd}`
   * -> Path: `Diary/2022/03/21`
-* `http://[team].esa.io/WeeklyMTG/${*,*,*,*,5|yyyy/MM/dd}`
+* `http://your-esaop.example.com/WeeklyMTG/${*,*,*,*,5|yyyy/MM/dd}`
   * -> `Path: WeeklyMTG/2022/03/25`
-* `http://[team].esa.io/MonthlyMTG/${*,*,1,*,*|yyyy/MM/dd}`
+* `http://your-esaop.example.com/MonthlyMTG/${*,*,1,*,*|yyyy/MM/dd}`
   * -> `Path: MonthlyMTG/2022/04/01`
