@@ -30,7 +30,7 @@ Access date: `2022/03/21`
 
 * `http://[team].esa.io/${yyyy/MM/dd}`
   * -> Path: `2022/03/21`
-* `http://[team].esa.io/${*,*m*,*,5|yyyy/MM/dd}`
+* `http://[team].esa.io/${*,*,*,*,5|yyyy/MM/dd}`
   * -> `Path: 2022/03/25`
 * `http://[team].esa.io/${*,*,10,*,*|yyyy/MM/dd}`
   * -> `Path: 2022/04/10`
