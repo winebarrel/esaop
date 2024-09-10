@@ -17,7 +17,7 @@ clean:
 
 .PHONY: image
 image:
-	docker build . -t $(DOCKER_REPO)
+	docker build . --platform linux/amd64 -t $(DOCKER_REPO)
 
 .PHONY: push
 push: image
