@@ -78,7 +78,7 @@ func NewRouter(cfg *Config) http.Handler {
 				cronDate := strings.SplitN(ph, "|", 2)
 				cronExp := strings.TrimSpace(cronDate[0])
 				cronExp = strings.ReplaceAll(cronExp, ",", " ")
-				cronExp = strings.ReplaceAll(cronExp, ".", ",")
+				cronExp = strings.ReplaceAll(cronExp, ";", ",")
 				dtFmt = strings.TrimSpace(cronDate[1])
 				skd, err := cron.ParseStandard(cronExp)
 
