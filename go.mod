@@ -1,6 +1,6 @@
 module github.com/winebarrel/esaop
 
-go 1.17
+go 1.23.0
 
 require (
 	github.com/gorilla/handlers v1.5.1
