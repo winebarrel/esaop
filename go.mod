@@ -16,7 +16,7 @@ require (
 
 require (
 	github.com/felixge/httpsnoop v1.0.3 // indirect
-	github.com/go-chi/chi/v5 v5.1.0 // indirect
+	github.com/go-chi/chi/v5 v5.2.2 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/gorilla/securecookie v1.1.2 // indirect
 	golang.org/x/oauth2 v0.17.0 // indirect
