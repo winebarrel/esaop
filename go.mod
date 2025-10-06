@@ -1,12 +1,12 @@
 module github.com/winebarrel/esaop
 
-go 1.23.0
+go 1.24
 
 require (
 	github.com/gorilla/handlers v1.5.2
 	github.com/gorilla/mux v1.8.1
 	github.com/gorilla/sessions v1.4.0
-	github.com/itchyny/timefmt-go v0.1.6
+	github.com/itchyny/timefmt-go v0.1.7
 	github.com/markbates/goth v1.82.0
 	github.com/newm4n/go-dfe v0.0.0-20210113055126-9d5f01722db9
 	github.com/pelletier/go-toml v1.9.5
